@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorGainsboro">#DCDCDC</color>
+    <color name="colorLightgray">#D3D3D3</color>
+    <color name="colorSlategray">#708090</color>
+    <color name="colorWhite">#ffff</color>
+    <color name="colorLightblue">#ADD8E6</color>
 </resources>
