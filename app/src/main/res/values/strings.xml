@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">LibreriaLector</string>
-
+    <string name="btnRegistrarProductos">Registrar</string>
+    <string name="btnModificarProductos">Modificar</string>
+    <string name="btnEliminarProductos">Eliminar</string>
+    <string name="btnListarProductos">Listar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
