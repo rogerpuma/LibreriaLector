@@ -11,12 +11,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(@Nullable Context context, @Nullable String name, @Nullable CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
+    /*
     public DBHelper(Context context){
         super(context,"DB_LibreriaLector",null,1);
-    }
+    }*/
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL("create table productos(codigo int primary key, nombre text, descripcion text, precio real, descuento real)");
     }
 
     @Override

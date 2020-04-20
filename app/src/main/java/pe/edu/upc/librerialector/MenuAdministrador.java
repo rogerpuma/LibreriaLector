@@ -1,16 +1,11 @@
 package pe.edu.upc.librerialector;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MenuAdministrador extends AppCompatActivity implements View.OnClickListener{
     private Button btnRegistrarProductos,btnModificarProductos,btnEliminarProductos,btnListarProductos;
@@ -22,7 +17,7 @@ public class MenuAdministrador extends AppCompatActivity implements View.OnClick
         btnRegistrarProductos = findViewById(R.id.btnRegistrarProductos);
         btnModificarProductos = findViewById(R.id.btnModificarProductos);
         btnEliminarProductos = findViewById(R.id.btnEliminarProductos);
-        btnListarProductos = findViewById(R.id.btnListarProductos);
+        btnListarProductos = findViewById(R.id.btnBuscarProductos);
 
         btnRegistrarProductos.setOnClickListener(this);
         btnModificarProductos.setOnClickListener(this);
@@ -45,9 +40,9 @@ public class MenuAdministrador extends AppCompatActivity implements View.OnClick
                 Intent eliminar = new Intent(v.getContext(), EliminarProductos.class);
                 startActivity(eliminar);
                 break;
-            case R.id.btnListarProductos:
-                Intent listar = new Intent(v.getContext(), ListarActivity.class);
-                startActivity(listar);
+            case R.id.btnBuscarProductos:
+                Intent buscar = new Intent(v.getContext(), BuscarProductos.class);
+                startActivity(buscar);
                 break;
         }//fin de switch
     }

@@ -52,10 +52,10 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/btnListarProductos"
+                android:id="@+id/btnBuscarProductos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btnListarProductos" />
+                android:text="Buscar" />
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

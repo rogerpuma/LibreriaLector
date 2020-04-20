@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnListarProductos = (Button)findViewById(R.id.btnListarProductos);
+        btnListarProductos = (Button)findViewById(R.id.btnBuscarProductos);
         btnRegistrarProductos = (Button)findViewById(R.id.btnRegistrarProductos);
 
         btnListarProductos.setOnClickListener(this);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnListarProductos:
+            case R.id.btnBuscarProductos:
                 transaction = getSupportFragmentManager().beginTransaction();
                 //transaction.replace(R.id.container, fragments.get(1));
                 transaction.replace(R.id.containerProductos,fragments.get(0));

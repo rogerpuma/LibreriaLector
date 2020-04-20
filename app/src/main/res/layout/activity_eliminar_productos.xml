@@ -24,9 +24,10 @@
                 android:id="@+id/edtCodigoProducto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:editable="true"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:enabled="false"/>
+                android:enabled="false"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -125,4 +126,5 @@
                 android:enabled="false"/>
         </TableRow>
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
