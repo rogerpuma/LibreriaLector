@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class ListarActivity extends AppCompatActivity {
+
     ListView lista;
     String[][] datos = {
             {"Simplisimo book", "COQUITO", "S/.25.00","Se publicó el 2010 como parte de una gran colección"},
@@ -35,6 +36,7 @@ public class ListarActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View v, int posicion, long l) {
                 Intent VisorDetalle = new Intent(v.getContext(), VisorImagen.class);
                 VisorDetalle.putExtra("IMG",datosIng[posicion]);
+                VisorDetalle.putExtra("PRODUCTO", datos[posicion][0]);
                 VisorDetalle.putExtra("PRICE", datos[posicion][2]);
                 VisorDetalle.putExtra("DETALLE",datos[posicion][3]);
                 startActivity(VisorDetalle);

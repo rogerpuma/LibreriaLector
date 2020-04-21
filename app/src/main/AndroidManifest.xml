@@ -9,7 +9,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".Global"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".carrito"></activity>
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan">
@@ -21,15 +23,13 @@
         </activity>
         <activity
             android:name=".ListarActivity"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".VisorImagen"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".TiendasActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>
-
