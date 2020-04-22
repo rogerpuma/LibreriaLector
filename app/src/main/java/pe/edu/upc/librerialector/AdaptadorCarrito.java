@@ -9,19 +9,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AdaptadorCarrito extends BaseAdapter {
-
     private static LayoutInflater inflater=null;
-
     Context contextocar;
     String [][] datoscar;
 
     public AdaptadorCarrito(Context contextocar, String[][] datoscar){
         this.contextocar=contextocar;
         this.datoscar=datoscar;
-
         inflater=(LayoutInflater)contextocar.getSystemService(contextocar.LAYOUT_INFLATER_SERVICE);
     }
-
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         final View vistacar = inflater.inflate(R.layout.elemento_carrito,null);

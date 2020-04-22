@@ -2,6 +2,7 @@ package pe.edu.upc.librerialector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,12 +19,12 @@ public class carrito extends AppCompatActivity {
     TextView tvProdcar, tvCantcar, tvmontoprod;
     Button btnpagar;
     String datoscar[][];
-
+    Context contexto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrito);
-
+        contexto=this;
         Global globalclass = (Global) getApplicationContext();
         listacarro = (ListView) findViewById(R.id.listaCarrito);
         btnpagar = (Button) findViewById(R.id.btnPagar);
@@ -36,7 +37,7 @@ public class carrito extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(this,"Se registra su pedido", LENGTH_SHORT).show();
+               Toast.makeText(contexto,"Se registra su pedido", LENGTH_SHORT).show();
 
             }
         });
