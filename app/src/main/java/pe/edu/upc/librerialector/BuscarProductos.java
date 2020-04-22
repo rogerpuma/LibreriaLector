@@ -34,7 +34,7 @@ public class BuscarProductos extends AppCompatActivity implements View.OnClickLi
                     Cursor fila = bdlibrerialector.rawQuery(
                             "select nombre, descripcion, precio, descuento from productos where codigo = " + codigo,null);
                     //Toast.makeText(this,"fila.getString(0)",Toast.LENGTH_LONG).show();
-                    if (fila.moveToFirst()){
+                    if (fila.moveToFirst()) {
                         edtNombreProducto.setText(fila.getString(0));
                         edtDescripcionProducto.setText(fila.getString(1));
                         edtPrecioProducto.setText(fila.getString(2));
