@@ -51,7 +51,7 @@ public class VisorImagen extends AppCompatActivity implements DialogoPedido.Fina
         btnTiendas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Tiendas = new Intent(v.getContext(), TiendasActivity.class);
+                Intent Tiendas = new Intent(v.getContext(), MapsActivity.class);
                 startActivity(Tiendas);
             }
         });
