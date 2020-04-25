@@ -23,11 +23,11 @@ public class carrito extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carrito);
+        //setContentView(R.layout.activity_carrito);
         contexto=this;
         Global globalclass = (Global) getApplicationContext();
-        listacarro = (ListView) findViewById(R.id.listaCarrito);
-        btnpagar = (Button) findViewById(R.id.btnPagar);
+        //listacarro = (ListView) findViewById(R.id.listaCarrito);
+        //btnpagar = (Button) findViewById(R.id.btnPagar);
         datoscar= globalclass.getCarrito();
 
         Toast.makeText(this,"carrito cargado:"+datoscar.length, LENGTH_SHORT).show();

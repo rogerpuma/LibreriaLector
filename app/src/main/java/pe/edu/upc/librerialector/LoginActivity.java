@@ -8,12 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     String user, clave;
     EditText edtuser, edtpass;
-    Button btnlogin;
+    Button btnlogin,btnregistrar;
     Context contexto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         user=edtuser.getText().toString();
         clave= edtpass.getText().toString();
 
+        btnregistrar = findViewById(R.id.btnregistrar);
+
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +38,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else Toast.makeText(contexto, "Usuario o clave incorrecta", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        btnregistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registro = new Intent(view.getContext(), RegistrarUsuario.class);
+                startActivity(registro);
             }
         });
     }
