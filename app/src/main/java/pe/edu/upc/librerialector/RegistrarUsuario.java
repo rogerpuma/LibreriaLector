@@ -32,8 +32,6 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
         btnRegistrarUsuario = findViewById(R.id.btnRegistrarUsuario);
 
         btnRegistrarUsuario.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -63,7 +61,7 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
                 }
             };
 
-            RegisterRequest registerRequest = new RegisterRequest(name,username,age,password,respoListener);
+            RegisterRequest registerRequest = new RegisterRequest(name, username, age, password, respoListener);
             RequestQueue queue = Volley.newRequestQueue(RegistrarUsuario.this);
             queue.add(registerRequest);
     }

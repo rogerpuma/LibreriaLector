@@ -1,5 +1,6 @@
 package pe.edu.upc.librerialector;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -10,6 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
     String user, clave;
@@ -37,7 +45,31 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(Listar);
                 }
                 else Toast.makeText(contexto, "Usuario o clave incorrecta", Toast.LENGTH_SHORT).show();
-
+                //Inicio
+                final String username = edtuser.getText().toString();
+                final String password = edtpass.getText().toString();
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if(success){
+                                Intent intent = new Intent(LoginActivity.this,ListarActivity.class);
+                                LoginActivity.this.startActivity(intent);
+                            }else{
+                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                builder.setMessage("error registro").setNegativeButton("Retry",null).create().show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                LoginRequest loginRequest = new LoginRequest(username,password,responseListener);
+                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                queue.add(loginRequest);
+                //Fin
             }
         });
 
