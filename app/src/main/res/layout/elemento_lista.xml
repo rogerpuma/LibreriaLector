@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="154dp" />
+        app:layout_constraintGuide_begin="130dp" />
 
     <TextView
         android:id="@+id/tvNombre"
@@ -55,15 +55,13 @@
         android:id="@+id/tvMarca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:background="@android:color/transparent"
         android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.584" />
@@ -72,15 +70,15 @@
         android:id="@+id/tvPreciolista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         android:background="@android:color/transparent"
-        android:textColor="@android:color/black"
         android:text="TextView"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.584" />
 
     <ImageView
         android:id="@+id/ivlist"
@@ -88,9 +86,10 @@
         android:layout_height="114dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.571"
         app:srcCompat="@drawable/libro_simplisimo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

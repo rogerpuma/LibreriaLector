@@ -8,14 +8,19 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.util.List;
+
 public class AdaptadorCarrito extends BaseAdapter {
     private static LayoutInflater inflater=null;
     Context contextocar;
-    String [][] datoscar;
+    List<DataDetallePedido> detalle;
 
-    public AdaptadorCarrito(Context contextocar, String[][] datoscar){
+
+
+    public AdaptadorCarrito(Context contextocar, List<DataDetallePedido> detalle){
         this.contextocar=contextocar;
-        this.datoscar=datoscar;
+        this.detalle=detalle;
         inflater=(LayoutInflater)contextocar.getSystemService(contextocar.LAYOUT_INFLATER_SERVICE);
     }
     @Override
@@ -25,26 +30,31 @@ public class AdaptadorCarrito extends BaseAdapter {
         TextView  cantidad = (TextView) vistacar.findViewById(R.id.tvCantcar);
         TextView  monto = (TextView) vistacar.findViewById(R.id.tvMontoprod);
 
-        nombre.setText(datoscar[i][0]);
-        cantidad.setText(datoscar[i][1]);
-        monto.setText(datoscar[i][2]);
+        nombre.setText(detalle.get(i).getNombre());
 
+        cantidad.setText((""+detalle.get(i).getCantidad()));
+        DecimalFormat precision = new DecimalFormat("#.00");
+        monto.setText(precision.format(detalle.get(i).getMonto()));
         return vistacar;
     }
 
     @Override
     public int getCount() {
-        return datoscar.length;
+        return detalle.size();
     }
-
+    public List<DataDetallePedido> getDetalle() {
+        return detalle;
+    }
     @Override
     public Object getItem(int i) {
-        return null;
+
+        return detalle.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+
+        return detalle.get(i).getId_pedido();
     }
 
 }

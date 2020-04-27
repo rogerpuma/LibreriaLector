@@ -36,7 +36,9 @@ public class DialogoPedido {
         tvAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 interfaz.CantidadDialogo(Integer.parseInt(edtCantidad.getText().toString()));
+
                 dialogo.dismiss();
             }
         });

@@ -30,10 +30,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent Listar = new Intent(view.getContext(), ListarActivity.class);
-                if (user=="admin" & clave=="admin"){
+                //if (user=="admin" && clave=="admin"){
                     startActivity(Listar);
-                }
-                else Toast.makeText(contexto, "Usuario o clave incorrecta", Toast.LENGTH_SHORT).show();
+                //}
+                //else Toast.makeText(contexto, "Usuario o clave incorrecta", Toast.LENGTH_SHORT).show();
 
             }
         });

@@ -11,39 +11,72 @@ import android.R.layout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class Adaptador extends BaseAdapter {
-    private static LayoutInflater inflater=null;
-
     Context contexto;
-    String [][] datos;
-    int[]   datosIng;
+    List<Datos> ListaObjetos;
+    List<DataDetallePedido> Listacarrito;
 
-    public Adaptador(Context contexto, String[][] datos, int[] imagenes){
+    public Adaptador(Context contexto, List<Datos> listaObjetos, List<DataDetallePedido> listacarrito) {
+        this.contexto = contexto;
+        this.ListaObjetos = listaObjetos;
+        this.Listacarrito=listacarrito;
+    }
 
-        this.contexto=contexto;
-        this.datos=datos;
-        this.datosIng=imagenes;
+    public Context getContexto() {
+        return contexto;
+    }
 
-        inflater=(LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
+    public void setContexto(Context contexto) {
+        this.contexto = contexto;
+    }
 
+    public List<Datos> getListaObjetos() {
+        return ListaObjetos;
+    }
+
+    public void setListaObjetos(List<Datos> listaObjetos) {
+        ListaObjetos = listaObjetos;
+    }
+
+    public List<DataDetallePedido> getListacarrito() {
+        return Listacarrito;
+    }
+
+    public void setListacarrito(List<DataDetallePedido> listacarrito) {
+        Listacarrito = listacarrito;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public int getCount() {
+        return ListaObjetos.size();//retorna cantidad de objetos de la lista
+    }
 
-        final View vista = inflater.inflate(R.layout.elemento_lista,null);
+    @Override
+    public Object getItem(int position) {
+        return ListaObjetos.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return ListaObjetos.get(position).getIdProducto();
+    }
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View vista = convertView;
+        LayoutInflater inflate=LayoutInflater.from(contexto);
+        vista=inflate.inflate(R.layout.elemento_lista,null); //Se carga la vista al listview
+
+        ImageView imagen=(ImageView) vista.findViewById(R.id.ivlist);
         TextView  nombre = (TextView) vista.findViewById(R.id.tvNombre);
         TextView  marca = (TextView) vista.findViewById(R.id.tvMarca);
         TextView  preciolista = (TextView) vista.findViewById(R.id.tvPreciolista);
-        ImageView imagen=(ImageView) vista.findViewById(R.id.ivlist);
 
-        nombre.setText(datos[i][0]);
-        marca.setText(datos[i][1]);
-        preciolista.setText(datos[i][2]);
-
-        imagen.setImageResource(datosIng[i]);
-
-        imagen.setTag(i);
+        nombre.setText(ListaObjetos.get(position).getNombre().toString());
+        marca.setText(ListaObjetos.get(position).getMarca().toString());
+        preciolista.setText(ListaObjetos.get(position).getPrecio().toString());
+        imagen.setImageResource(R.drawable.acuarela_barrilito);
 
         imagen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,21 +90,5 @@ public class Adaptador extends BaseAdapter {
 
         return vista;
     }
-
-    @Override
-    public int getCount() {
-        return datosIng.length;
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
 
 }
