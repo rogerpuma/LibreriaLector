@@ -6,13 +6,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
 import android.view.Window;
+import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class DialogoPedido {
-
+    private String cantidad="";
     public interface FinalizaDialogo{
         void CantidadDialogo(Integer cantidad);
     }
@@ -36,8 +37,9 @@ public class DialogoPedido {
         tvAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                interfaz.CantidadDialogo(Integer.parseInt(edtCantidad.getText().toString()));
+                cantidad=edtCantidad.getText().toString();
+                if(cantidad==""){Toast.makeText(contexto,"Ingrese un valor válido...",Toast.LENGTH_SHORT).show();}
+                else{interfaz.CantidadDialogo(Integer.parseInt(edtCantidad.getText().toString()));}
 
                 dialogo.dismiss();
             }

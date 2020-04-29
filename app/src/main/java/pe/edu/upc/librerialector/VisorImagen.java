@@ -26,7 +26,7 @@ public class VisorImagen extends AppCompatActivity implements DialogoPedido.Fina
     Context contexto;
     int id_producto,cantidad;
     Double precio, dcto;
-    String nombre;
+    String nombre, moneda;
     List<DataDetallePedido> pedido;
     TextView precioI,estado,detalle;
 
@@ -68,8 +68,9 @@ public class VisorImagen extends AppCompatActivity implements DialogoPedido.Fina
             nombre=b.getString("NOMBRE");
             precio =b.getDouble("PRECIO");
             dcto =b.getDouble("DCTO");
-            precioI.setText(b.getString("PRECIO"));
-            img.setImageResource(b.getInt("IMG"));
+            moneda=b.getString("MONEDA");
+            precioI.setText(String.valueOf(precio)+" "+moneda);
+            img.setImageResource(R.drawable.notf);
             detalle.setText(b.getString("DESCRIPCION"));
         }
     }

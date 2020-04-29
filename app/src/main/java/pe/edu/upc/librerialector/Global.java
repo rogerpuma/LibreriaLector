@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Global extends Application {
-    private String user;
+    private String user="U00000";
     private List<DataDetallePedido> carritocompras=new ArrayList<>();
 
     public List<DataDetallePedido> getCarritocompras() {

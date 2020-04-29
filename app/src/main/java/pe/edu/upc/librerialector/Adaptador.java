@@ -75,8 +75,8 @@ public class Adaptador extends BaseAdapter {
 
         nombre.setText(ListaObjetos.get(position).getNombre().toString());
         marca.setText(ListaObjetos.get(position).getMarca().toString());
-        preciolista.setText(ListaObjetos.get(position).getPrecio().toString());
-        imagen.setImageResource(R.drawable.acuarela_barrilito);
+        preciolista.setText(ListaObjetos.get(position).getPrecio().toString()+" "+ListaObjetos.get(position).getId_moneda().toString());
+        imagen.setImageResource(R.drawable.notf);
 
         imagen.setOnClickListener(new View.OnClickListener() {
             @Override

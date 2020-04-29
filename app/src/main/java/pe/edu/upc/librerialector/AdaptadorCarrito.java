@@ -16,7 +16,9 @@ public class AdaptadorCarrito extends BaseAdapter {
     Context contextocar;
     List<DataDetallePedido> detalle;
 
-
+    public void setDetalle(List<DataDetallePedido> detalle) {
+        this.detalle = detalle;
+    }
 
     public AdaptadorCarrito(Context contextocar, List<DataDetallePedido> detalle){
         this.contextocar=contextocar;

@@ -35,7 +35,6 @@ public class ListarActivity extends AppCompatActivity {
     ArrayList<DataDetallePedido> listacarrito = new ArrayList<>();
     ArrayList<Datos> listadatos;
     EditText edtCriterio;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +94,7 @@ public class ListarActivity extends AppCompatActivity {
                 VisorDetalle.putExtra("IMG",listadatos.get(posicion).getImagen());
                 VisorDetalle.putExtra("NOMBRE", listadatos.get(posicion).getNombre());
                 VisorDetalle.putExtra("PRECIO", listadatos.get(posicion).getPrecio());
+                VisorDetalle.putExtra("MONEDA", listadatos.get(posicion).getId_moneda());
                 VisorDetalle.putExtra("DESCRIPCION",listadatos.get(posicion).getDescripcion());
                 VisorDetalle.putExtra("DCTO",listadatos.get(posicion).getDcto());
 
@@ -152,7 +152,7 @@ public class ListarActivity extends AppCompatActivity {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
-        Toast.makeText(this,criterio,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"buscaste:"+criterio,Toast.LENGTH_SHORT).show();
     }
 
 }
