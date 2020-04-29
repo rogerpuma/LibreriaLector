@@ -74,7 +74,7 @@ public class carrito extends AppCompatActivity {
 
                Toast.makeText(contexto,"Registrando su pedido...", LENGTH_SHORT).show();
                ejecutarServicio("http://lectorlibreria.atwebpages.com/index.php/pedidos");
-
+                Toast.makeText(contexto, "Operación exitosa, gracias por comprar en nuestra tienda", Toast.LENGTH_LONG).show();
 
             }
         });

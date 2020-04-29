@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,12 +36,14 @@ public class ListarActivity extends AppCompatActivity {
     ArrayList<DataDetallePedido> listacarrito = new ArrayList<>();
     ArrayList<Datos> listadatos;
     EditText edtCriterio;
+    ImageButton ibPedido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
         lista = (ListView) findViewById(R.id.list1);
+        ibPedido=(ImageButton) findViewById(R.id.ibPedidos);
         listadatos = new ArrayList<>();
         String url="http://lectorlibreria.atwebpages.com/index.php/productos";
         StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -102,6 +105,15 @@ public class ListarActivity extends AppCompatActivity {
 
             }
         });
+
+        ibPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Listapedido = new Intent(view.getContext(),listarPedidos.class);
+                startActivity(Listapedido);
+            }
+        });
+
 
     }
 

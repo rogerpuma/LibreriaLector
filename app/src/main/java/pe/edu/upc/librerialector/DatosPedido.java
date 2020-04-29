@@ -12,7 +12,7 @@ public class DatosPedido {
         this.idPedido = idPedido;
         this.fecha = fecha;
         this.total = total;
-        this.id_usuario = id_usuario;
+        this.id_usuario = this.id_usuario;
     }
 
     public int getIdPedido() {
