@@ -38,11 +38,7 @@
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ListarActivity"
@@ -52,6 +48,24 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".TiendasActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MenuAdministrador"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegistrarProductos"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ModificarProductos"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".EliminarProductos"
             android:windowSoftInputMode="adjustPan" />
     </application>
 

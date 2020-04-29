@@ -97,9 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                                         object.getString("usuario"),
                                         object.getString("password"),
                                         object.getString("edad")));
-
                             }
-
                         } catch (JSONException e) {
                             Log.i("======>", e.getMessage());
                         }
