@@ -48,12 +48,12 @@ public class carrito extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carrito);
+        //setContentView(R.layout.activity_carrito);
         contexto=carrito.this;
         Global globalclass = (Global) getApplicationContext();
-        listacarro = (ListView) findViewById(R.id.listaCarrito);
-        btnpagar = (Button) findViewById(R.id.btnPagar);
-        tvtotal =(TextView) findViewById(R.id.tvTotal);
+        //listacarro = (ListView) findViewById(R.id.listaCarrito);
+        //btnpagar = (Button) findViewById(R.id.btnPagar);
+        //tvtotal =(TextView) findViewById(R.id.tvTotal);
         detalle = new ArrayList<>();
         detalle= globalclass.getCarritocompras();
         idusuario=globalclass.getUser();
